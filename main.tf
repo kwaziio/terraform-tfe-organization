@@ -67,7 +67,7 @@ data "tfe_organization_membership" "admins" {
   organization = tfe_organization.main.name
 }
 
-resource "tfe_team_organization_members" "admins"  {
+resource "tfe_team_organization_members" "admins" {
   count                       = length(data.tfe_organization_membership.admins) > 0 ? 1 : 0
   organization_membership_ids = data.tfe_organization_membership.admins.*.id
   team_id                     = tfe_team.admins.id
@@ -105,7 +105,7 @@ data "tfe_organization_membership" "engineers" {
   organization = tfe_organization.main.name
 }
 
-resource "tfe_team_organization_members" "engineers"  {
+resource "tfe_team_organization_members" "engineers" {
   count                       = length(data.tfe_organization_membership.engineers) > 0 ? 1 : 0
   organization_membership_ids = data.tfe_organization_membership.engineers.*.id
   team_id                     = tfe_team.engineers.id

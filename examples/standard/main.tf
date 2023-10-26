@@ -41,15 +41,15 @@ module "terraform_aws_network" {
   organization_email = "example@example.com"
   organization_name  = "example-organization"
 
-  organization_members =[
+  organization_members = [
     // DO NOT INCLUDE INITIAL USER ACCOUNT (OWNER)
   ]
 
-  team_admins =[
+  team_admins = [
     // Add Active Organization Members w/ Administrative Permissions (Email Address)
   ]
 
-  team_engineers =[
+  team_engineers = [
     // Add Active Organization Members w/ Power User Permissions (Email Address)
   ]
 }
