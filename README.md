@@ -44,16 +44,8 @@ terraform {
 
 provider "tfe" {
   // DO NOT HARDCODE CREDENTIALS (Use Environment Variables)
-  alias        = "initial"
   hostname     = "app.terraform.io"
   organization = var.organization_name
-}
-
-provider "tfe" {
-  // DO NOT HARDCODE CREDENTIALS (Use Environment Variables)
-  hostname     = "app.terraform.io"
-  organization = var.organization_name
-  token        = tfe_organization_token.main.token
 }
 
 #####################################################
@@ -90,8 +82,6 @@ Placeholder | Description
 `MEMBER_EMAIL_ADDRESS` | Replace this w/ Zero-to-Many Non-Owner Email Addresses
 `ORGANIZATION_EMAIL` | Replace this w/ the Organization's Email Address
 `ORGANIZATION_NAME` | Replace this w/ the Organization's Name
-
-> NOTE: You've probably noticed that there are two provider definitions for Terraform Cloud. That's because we use the first (aliased "initial") to create an Organization API Key, then we use the value of that key to initialize the second provider.
 
 ### Importing the Terraform Cloud Organization
 
