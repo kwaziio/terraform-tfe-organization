@@ -9,7 +9,6 @@ resource "tfe_organization" "main" {
   cost_estimation_enabled       = true
   email                         = var.organization_email
   name                          = var.organization_name
-  provider                      = tfe.initial
   session_remember_minutes      = var.organization_session_max
   session_timeout_minutes       = var.organization_session_timeout
 }
