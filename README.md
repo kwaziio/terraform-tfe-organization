@@ -91,6 +91,8 @@ Placeholder | Description
 `ORGANIZATION_EMAIL` | Replace this w/ the Organization's Email Address
 `ORGANIZATION_NAME` | Replace this w/ the Organization's Name
 
+> NOTE: You've probably noticed that there are two provider definitions for Terraform Cloud. That's because we use the first (aliased "initial") to create an Organization API Key, then we use the value of that key to initialize the second provider.
+
 ### Importing the Terraform Cloud Organization
 
 Before attempting to execute this module, you'll want to import the organization you created manually:
