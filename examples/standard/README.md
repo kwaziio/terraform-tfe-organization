@@ -25,16 +25,8 @@ terraform {
 
 provider "tfe" {
   // DO NOT HARDCODE CREDENTIALS (Use Environment Variables)
-  alias        = "initial"
   hostname     = "app.terraform.io"
   organization = var.organization_name
-}
-
-provider "tfe" {
-  // DO NOT HARDCODE CREDENTIALS (Use Environment Variables)
-  hostname     = "app.terraform.io"
-  organization = var.organization_name
-  token        = tfe_organization_token.main.token
 }
 
 #####################################################

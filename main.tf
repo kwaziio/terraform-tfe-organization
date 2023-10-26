@@ -14,17 +14,6 @@ resource "tfe_organization" "main" {
   session_timeout_minutes       = var.organization_session_timeout
 }
 
-###################################################
-# Creates Organization Token for API Interactions #
-###################################################
-
-resource "tfe_organization_token" "main" {
-  organization     = tfe_organization.main.name
-  expired_at       = var.organization_token_expiration
-  force_regenerate = false
-  provider         = tfe.initial
-}
-
 ##################################################
 # Creates Organization Memberships for All Users #
 ##################################################
